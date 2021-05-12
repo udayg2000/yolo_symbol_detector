@@ -1,0 +1,26 @@
+<annotation>
+	<folder>custom_dataset</folder>
+	<filename>21861.jpg</filename>
+	<path>C:\Users\Uday\Desktop\TensorFlow-2.x-YOLOv3-master\TensorFlow-2.x-YOLOv3-master\custom_dataset\21861.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1556</width>
+		<height>1809</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>symbol 7</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>180</xmin>
+			<ymin>1348</ymin>
+			<xmax>590</xmax>
+			<ymax>1784</ymax>
+		</bndbox>
+	</object>
+</annotation>
