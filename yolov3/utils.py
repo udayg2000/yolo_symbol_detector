@@ -156,8 +156,6 @@ def nms(bboxes, iou_threshold, sigma=0.3, method='nms'):
     """
     :param bboxes: (xmin, ymin, xmax, ymax, score, class)
 
-    Note: soft-nms, https://arxiv.org/pdf/1704.04503.pdf
-          https://github.com/bharatsingh430/soft-nms
     """
     classes_in_img = list(set(bboxes[:, 5]))
     best_bboxes = []
