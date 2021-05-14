@@ -1,6 +1,8 @@
 #================================================================
 #
 #   File name   : train.py
+#   
+#   Description : used to train custom object detector
 #
 #================================================================
 import os
@@ -13,13 +15,14 @@ from yolov3.dataset import Dataset
 from yolov3.yolov3 import Create_Yolov3, YOLOv3, decode, compute_loss
 from yolov3.utils import load_yolo_weights
 from yolov3.configs import *
+#from keras.utils.vis_utils import plot_model
 
 input_size = YOLO_INPUT_SIZE
 logdir = TRAIN_LOGDIR
 Darknet_weights = YOLO_DARKNET_WEIGHTS
 
 save_best_only = True # saves only best model according validation loss
-save_checkpoints = True # saves all best validated checkpoints in training process (may require a lot disk space)
+save_checkpoints = False # saves all best validated checkpoints in training process (may require a lot disk space)
 
 def main():
     global TRAIN_FROM_CHECKPOINT
@@ -60,7 +63,10 @@ def main():
                     print("skipping", yolo.layers[i].name)
 
     optimizer = tf.keras.optimizers.Adam()
-
+    #print(yolo.summary())
+    #print(Darknet.summary())
+    #plot_model(yolo, to_file='yolo_model_plot.png', show_shapes=True, show_layer_names=True)    
+    #plot_model(Darknet, to_file='darknet_model_plot.png', show_shapes=True, show_layer_names=True)
 
     def train_step(image_data, target):
         with tf.GradientTape() as tape:
